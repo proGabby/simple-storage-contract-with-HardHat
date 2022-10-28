@@ -15,6 +15,14 @@ module.exports = {
       accounts: [PRIVATE_KEY],
       chainId: 5,
     },
+    //run locally using hardhat node
+    //to run on a local node, ensure to run npx hardhat node on a different bash shell
+    //before runing npx hardhat run <deploy script path> --network localhost
+    localhost: {
+      url: "http://127.0.0.1:8545/", //localhost address
+      chainId: 31337,
+      //no account as hardhat give us by default
+    },
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,

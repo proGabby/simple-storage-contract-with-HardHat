@@ -2,10 +2,12 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
 require("./tasks/block-number");
+require("hardhat-gas-reporter");
 
 G0ERLI_RPC_URL = process.env.G0ERLI_RPC_URL;
 PRIVATE_KEY = process.env.PRIVATE_KEY;
 ETHERSCAN_API_KEY = process.env.ETHER_SCAN_API_KEY;
+COINMARKET_API_KEY = process.env.COINMARKET_CAP_API_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -28,4 +30,22 @@ module.exports = {
     apiKey: ETHERSCAN_API_KEY,
   },
   solidity: "0.8.7",
+
+  /* 
+to use gas reporter, 
+1. install and import the 'hardhat-gas-reporter' package
+2. make enable true
+3. optional: set currency, get coinmarket api key for token price convert to your currency
+4. optional: set token to the blockchain you want to deploy eg token: "MATIC"
+5. RUN npx hardhat test
+
+*/
+  gasReporter: {
+    enabled: true,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "USD",
+    coinmarketcap: COINMARKET_API_KEY,
+    token: "ETH",
+  },
 };

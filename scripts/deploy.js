@@ -1,5 +1,5 @@
 //import ethers directly form hardhat not ethers
-const { ethers, run } = require("hardhat");
+const { ethers, run, network } = require("hardhat");
 
 //async main
 async function main() {

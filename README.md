@@ -7,6 +7,14 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
     run npx hardhat test --grep <test verb>
     or use It.only instead of just It
 
+## to use gas reporter,
+
+1. install and import the 'hardhat-gas-reporter' package
+2. make enable true
+3. optional: set currency, get coinmarket api key for token price convert to your currency
+4. optional: set token to the blockchain you want to deploy eg token: "MATIC"
+5. RUN npx hardhat test
+
 Try running some of the following tasks:
 
 ```shell

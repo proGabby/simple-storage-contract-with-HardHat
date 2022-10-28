@@ -1,5 +1,6 @@
 const { ethers } = require("hardhat");
 const { exoect, assert, expect } = require("chai");
+const { solidity } = require("../hardhat.config");
 
 describe("SimpleStorage", function () {
   let simpleStorageFactory, simpleStorage;
@@ -32,5 +33,19 @@ describe("SimpleStorage", function () {
 
     const currentValue = await simpleStorage.retrieve();
     assert.equal(currentValue.toString(), expectedValue);
+  });
+
+  it("to add a person when addperson is called", async function () {
+    expectedPersonname = "john";
+    expectedFavouriteNumber = 5;
+    const transactionResponse = await simpleStorage.addPerson(
+      expectedPersonname,
+      expectedFavouriteNumber
+    );
+    await transactionResponse.wait(1);
+
+    const { name, favoriteNumber } = await simpleStorage.peopleArray(0);
+    assert.equal(name, expectedPersonname);
+    assert.equal(favoriteNumber, expectedFavouriteNumber);
   });
 });

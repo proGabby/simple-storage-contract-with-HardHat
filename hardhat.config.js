@@ -3,6 +3,8 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
 require("./tasks/block-number");
 require("hardhat-gas-reporter");
+//solidy-coverage used to check which sol function we havent written test for
+require("solidity-coverage");
 
 G0ERLI_RPC_URL = process.env.G0ERLI_RPC_URL;
 PRIVATE_KEY = process.env.PRIVATE_KEY;

@@ -15,6 +15,12 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 4. optional: set token to the blockchain you want to deploy eg token: "MATIC"
 5. RUN npx hardhat test
 
+## To check which .sol contract we haven't written test for
+
+1. solidity coverage plugin, to install use npm install --save -dev solidity-coverage
+2. require it in hardhat.config.js file
+3. use it by running npx hardhat coverage
+
 Try running some of the following tasks:
 
 ```shell

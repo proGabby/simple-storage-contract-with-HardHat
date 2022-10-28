@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
+require("./tasks/block-number");
 
 G0ERLI_RPC_URL = process.env.G0ERLI_RPC_URL;
 PRIVATE_KEY = process.env.PRIVATE_KEY;
